@@ -69,11 +69,14 @@ const FAQSection: React.FC = () => {
                 id={`faq-content-${index}`}
                 role="region"
                 aria-labelledby={`faq-btn-${index}`}
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
-                  }`}
+                className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                  openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                }`}
               >
-                <div className="p-6 pt-0 text-gray-700 text-sm leading-relaxed border-t border-gray-200 mt-2">
-                  {faq.answer}
+                <div className="min-h-0 overflow-hidden">
+                  <div className="p-6 pt-0 text-gray-700 text-sm leading-relaxed border-t border-gray-200 mt-2">
+                    {faq.answer}
+                  </div>
                 </div>
               </div>
             </div>

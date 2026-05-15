@@ -17,16 +17,26 @@ const Footer: React.FC = () => {
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
 
-  const Modal = ({ title, content, onClose }: { title: string, content: React.ReactNode, onClose: () => void }) => (
+  const Modal = ({
+    title,
+    titleId,
+    content,
+    onClose,
+  }: {
+    title: string;
+    titleId: string;
+    content: React.ReactNode;
+    onClose: () => void;
+  }) => (
     <div
       className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-navy-950/90 backdrop-blur-sm animate-fade-in"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="modal-title"
+      aria-labelledby={titleId}
     >
       <div className="bg-white text-navy-900 rounded-xl w-full max-w-2xl max-h-[80vh] flex flex-col relative shadow-2xl">
         <div className="flex justify-between items-center p-6 border-b border-gray-100">
-          <h3 id="modal-title" className="text-xl font-bold text-gold-700">{title}</h3>
+          <h3 id={titleId} className="text-xl font-bold text-gold-700">{title}</h3>
           <button
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-gold-500"
@@ -111,6 +121,7 @@ const Footer: React.FC = () => {
       {showPrivacy && (
         <Modal
           title="Política de Privacidade e LGPD"
+          titleId="footer-modal-privacy-title"
           onClose={() => setShowPrivacy(false)}
           content={
             <>
@@ -127,6 +138,7 @@ const Footer: React.FC = () => {
       {showTerms && (
         <Modal
           title="Termos de Uso"
+          titleId="footer-modal-terms-title"
           onClose={() => setShowTerms(false)}
           content={
             <>

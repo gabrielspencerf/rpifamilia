@@ -1,5 +1,5 @@
 import React from 'react';
-import { Gavel, Lock, Users, FileSearch, ShieldCheck, Scale, FileText, Siren, ArrowUpRight } from 'lucide-react';
+import { Gavel, Lock, Users, FileSearch, ShieldCheck, Scale, FileText, Handshake, ArrowUpRight } from 'lucide-react';
 
 const ServicesSection: React.FC = () => {
   const areas = [
@@ -10,7 +10,7 @@ const ServicesSection: React.FC = () => {
     { title: "Pensão Alimentícia", desc: "Atuação em pedido, revisão, exoneração ou execução de alimentos, buscando equilíbrio entre necessidade, possibilidade e segurança jurídica.", icon: <Scale /> },
     { title: "Partilha de Bens", desc: "Análise do patrimônio do casal para divisão adequada conforme o regime de bens, documentação existente e particularidades da relação.", icon: <Gavel /> },
     { title: "Regulamentação de Visitas", desc: "Organização jurídica da convivência entre pais, filhos e familiares, evitando conflitos recorrentes e trazendo previsibilidade à rotina.", icon: <FileText /> },
-    { title: "Acordos Familiares", desc: "Elaboração e formalização de acordos para resolver conflitos com mais agilidade, segurança e menor exposição emocional.", icon: <Siren /> },
+    { title: "Acordos Familiares", desc: "Elaboração e formalização de acordos para resolver conflitos com mais agilidade, segurança e menor exposição emocional.", icon: <Handshake /> },
   ];
 
   return (
@@ -42,7 +42,11 @@ const ServicesSection: React.FC = () => {
               </div>
 
               <div className="w-12 h-12 md:w-14 md:h-14 bg-navy-50 text-navy-900 rounded-lg flex items-center justify-center mb-4 md:mb-6 group-hover:bg-navy-950 group-hover:text-gold-500 transition-colors duration-300">
-                {React.cloneElement(area.icon as React.ReactElement, { size: 24, strokeWidth: 1.5, "aria-hidden": "true" })}
+                {React.cloneElement(area.icon as React.ReactElement<Record<string, unknown>>, {
+                  size: 24,
+                  strokeWidth: 1.5,
+                  'aria-hidden': true,
+                })}
               </div>
 
               <h3 className="text-lg font-bold text-navy-950 mb-3 group-hover:text-gold-700 transition-colors">

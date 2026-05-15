@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white mb-5 md:mb-7 tracking-tight animate-fade-in-up" style={{ animationDelay: '100ms' }}>
             Orientação jurídica segura <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 animate-shimmer">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 animate-shimmer-hero">
               para momentos delicados da família.
             </span>
           </h1>
